@@ -3,12 +3,12 @@
 namespace App\Controller;
 
 use App\Entity\Contact;
-use DateTime;
+use App\Form\ContactType;
 use DateTimeImmutable;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 
 class helloController extends AbstractController
@@ -37,32 +37,21 @@ class helloController extends AbstractController
         ]);
     }
     /**
-     * @Route("/hello", name="hello_twig")
+     * @Route("/categories", name="categories")
      */
     
     public function helloTwig()
     {
-        
-        return $this->render('base.html.twig',[
-            "key" => "value",
-            "Ynov" => "B3 info web dev",
-
-        ]);
+        return $this->render('hello/categories.html.twig');
     }
     
     /**
      * @Route("/", name="hello")
      */
     
-    
     public function helloParam(Request $request)
-    {
-        $param = $request->query->all();
-        $param = $_GET;
-        
-        return $this->render('hello/param.html.twig', [
-            'param' => $param
-        ]);
+    {        
+        return $this->render('base.html.twig');
     }
     
 }

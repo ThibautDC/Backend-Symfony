@@ -1,22 +1,59 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {# Run `composer require symfony/webpack-encore-bundle`
-           and uncomment the following Encore helpers to start using Symfony UX #}
-           <link rel="stylesheet" href="bootstrap.min.css">
-        {% block stylesheets %}
-            {#{{ encore_entry_link_tags('app') }}#}
-        {% endblock %}
+	<head>
+		<meta charset="UTF-8">
+		<title>
+			{% block title %}
+			Bienvenue !
+			{% endblock %}
+		</title>
+		{# Run `composer require symfony/webpack-encore-bundle`and uncomment the following Encore helpers to start using Symfony UX #}
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+		{% block stylesheets %}
+			{#{{ encore_entry_link_tags('app') }}#}
+		{% endblock %}
 
-        {% block javascripts %}
-            {#{{ encore_entry_script_tags('app') }}#}
-        {% endblock %}
-    </head>
-    <body>
-        {% block body %}
-        
-        {% endblock %}
-    </body>
+		{% block javascripts %}
+			{#{{ encore_entry_script_tags('app') }}#}
+		{% endblock %}
+	</head>
+	<body>
+		{% include "hello/header.html.twig" %}
+		{% block body %}
+			<div class="container row">
+			{# Card half img half desc #}
+			
+				<div class="card" style="width: 30rem; margin: 10px">
+					<img class="card-img-top" src="profilF.jpg" alt="Image de profile Anissa">
+					<div class="card-body">
+						<h5 class="card-title">Anissa Xofone</h5>
+						<h6 class="card-subtitle mb-2 text-muted">Professeur de saxophone</h6>
+						<p class="card-text">J'enseinge le saxophone depuis 5 ans.</p>
+					</div>
+				</div>
+
+				<div class="card" style="width: 30rem; margin: 10px">
+					<img class="card-img-top" src="profilM.png" alt="Image de profile Baptiste">
+					<div class="card-body">
+						<h5 class="card-title">Baptiste Hambour</h5>
+						<h6 class="card-subtitle mb-2 text-muted">Professeur de tamboure</h6>
+						<p class="card-text">J'enseinge le tamboure depuis 8 ans.</p>
+					</div>
+				</div>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			</div>
+		{% endblock %}
+
+		{% include "hello/footer.html.twig" %}
+	</body>
 </html>
